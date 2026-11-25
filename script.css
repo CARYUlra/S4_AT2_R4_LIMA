@@ -1,0 +1,54 @@
+  .imagem {
+    display: flex;         /* Coloca o texto do lado do outro */
+    align-items: center;  /* Alinha verticalmente ao centro */
+    gap: 16px;            /* Espaçamento entre a imagem e o texto */
+    border-radius: 5px;  /* Arredonda os cantos da imagem */
+    border-color: rgb(155,155,255);
+    border-style: solid;
+  }
+  .imagemDoLogin{
+    display: flex;         /* Coloca o texto do lado do outro */
+    align-items: center;  /* Alinha verticalmente ao centro */
+    gap: 16px;            /* Espaçamento entre a imagem e o texto */
+  }
+  .texto{
+    color: #ffffff;    
+  }
+  .subtitulo {
+    font-size: 3em;     /* Tamanho da fonte do subtítulo */
+    font-family: 'Finger Paint', cursive;/* Estilo da fonte do subtítulo */
+    color: #ffffff;          /* Cor do subtítulo */
+  }
+    body {
+        background-color: #000000;
+        }
+    header {  
+        background-color: rgb(155,155,255);/* Cor de fundo do cabeçalho */
+        color: white;               /* Cor do texto do cabeçalho */
+        text-align: center;         /* Centraliza o texto do cabeçalho */
+        padding: 15px 0;
+    }
+
+    footer {
+        background-color: rgb(155,155,255);/* Cor de fundo do roda pé */
+        color: rgb(0, 0, 0);               /* Cor do texto do roda pé */
+        text-align: center;                 /* Centraliza o texto do roda pé */
+        padding: 10px 0;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        padding: 10px 0;
+
+        width: 100%;
+        bottom: 0;
+    }
+            .opcao-grupo {
+            margin-bottom: 15px;
+        }
+        /* Esconde as perguntas inicialmente */
+        .pergunta-dinamica {
+            display: none;
+            margin-top: 15px;
+            padding: 10px;
+            border-left: 4px solid #007BFF;
+        }
+  

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DEsmonte seu PC</title>
+<link rel="stylesheet" href="./script.css">        <!-- Estilo para a página    -->
+
+</head>
+
+<body style="color: aliceblue;">
+
+ <fieldset>
+        <legend><strong>Exenciais</strong></legend>
+        <p>
+            <label for="gpu">Processadoreo Principal:</label>
+            <select id="gpu" name="gpu" required>
+                <option value="">-- Selecione um Processador --</option>
+                <option value="i512600k">Intel i5-12600K (Entry)</option>
+                <option value="r57600x">AMD R5 7600X (Mid-Range)</option>
+                <option value="r77800x">AMD R7 7800X (High-End 4K)</option>
+            </select><br><br>
+                        <label for="placa_mae">Placa mãe</label>
+            <select id="placa_mae" name="placa_mae" required>
+                <option value="">-- Selecione uma Placa Mãe --</option>
+                <option value="b660">Intel B660 (Entry)</option>
+                <option value="x570">AMD X570 (Mid-Range)</option>
+                <option value="x670">AMD X670 (High-End 4K)</option>
+            </select><br><br>
+                        <label for="armazenamento">Armazenamento:</label>
+            <select id="armazenamento" name="armazenamento" required>
+                <option value="">-- Selecione um Armazenamento --</option>
+                <option value="ssd">SSD (Entry)</option>
+                <option value="hdd">HDD (Mid-Range)</option>
+                <option value="nvme">NVMe (High-End 4K)</option>
+            </select><br><br>
+                        <label for="ram">Memória RAM:</label>
+            <select id="ram" name="ram" required>
+                <option value="">-- Selecione uma Memória RAM --</option>
+                <option value="8gb">8GB (Entry)</option>
+                <option value="16gb">16GB (Mid-Range)</option>
+                <option value="32gb">32GB (High-End 4K)</option>
+            </select><br><br>
+                        <label for="PLaca de Video">Placa de Vídeo:</label>
+            <select id="placa_de_video" name="placa_de_video" required>
+                <option value="">-- Selecione uma Placa de Vídeo --</option>
+                <option value="rtx3060">NVIDIA RTX 3060 (Entry)</option>
+                <option value="rtx3080">NVIDIA RTX 3080 (Mid-Range)</option>
+                <option value="rtx4090">NVIDIA RTX 4090 (High-End 4K)</option>
+            </select><br><br>
+                        <label for="fonte">Fonte de Alimentação:</label>
+            <select id="fonte" name="fonte" required>
+                <option value="">-- Selecione uma Fonte de Alimentação --</option>
+                <option value="500w">500W (Entry)</option>
+                <option value="650w">650W (Mid-Range)</option>
+                <option value="850w">850W (High-End 4K)</option>
+            </select><br>
+
+    <h3>coller</h3>
+
+    <!-- Opções Principais (Botões Radio) -->
+    <div class="opcao-grupo">
+        <label>
+            <input type="radio" name="tipo_cooler" value="air" onclick="alternarPerguntas()"> 
+            Air Cooler
+        </label>
+    </div>
+    <div class="opcao-grupo">
+        <label>
+            <input type="radio" name="tipo_cooler" value="water" onclick="alternarPerguntas()"> 
+            Water Cooler
+        </label>
+    </div>
+
+    <!-- Bloco que aparece se escolher Air Cooler -->
+    <div id="bloco-air" class="pergunta-dinamica">
+        <label for="select-air">Qual Air Cooler você quer comprar?</label>
+        <select id="select-air">
+            <option value="">[Selecione seu Air Cooler]</option>
+            <option value="cooler-master">Cooler Master Hyper H412R</option>
+            <option value="deepcool">DeepCool AK400</option>
+            <option value="noctua">Noctua NH-D15</option>
+        </select>
+    </div>
+
+    <!-- Bloco que aparece se escolher Water Cooler -->
+    <div id="bloco-water" class="pergunta-dinamica">
+        <label for="select-water">Qual Water Cooler você quer comprar?</label>
+        <select id="select-water">
+            <option value="">[Selecione seu Water Cooler]</option>
+            <option value="corsair">Corsair iCUE H100i</option>
+            <option value="nzxt">NZXT Kraken 240</option>
+            <option value="rise-mode">Rise Mode Aura Frost</option>
+        </select>
+    </div>
+
+    <script>
+        function alternarPerguntas() {
+            // Obtém o valor do rádio que está marcado
+            const opcaoSelecionada = document.querySelector('input[name="tipo_cooler"]:checked').value;
+            
+            // Pega os dois blocos de perguntas do HTML
+            const blocoAir = document.getElementById('bloco-air');
+            const blocoWater = document.getElementById('bloco-water');
+
+            // Lógica para mostrar um e esconder o outro
+            if (opcaoSelecionada === 'air') {
+                blocoAir.style.display = 'block';      // Mostra Air
+                blocoWater.style.display = 'none';     // Esconde Water
+            } else if (opcaoSelecionada === 'water') {
+                blocoAir.style.display = 'none';     // Esconde Air
+                blocoWater.style.display = 'block';    // Mostra Water
+            }
+        }
+    </script>
+
+
+
+
+        </p>
+    </fieldset>
+    <p>
+         <fieldset>
+        <legend><strong>ADICIONAIS</strong></legend>
+        <strong>O PC deve vir montado</strong>
+        <div>
+        <input type="radio" id="SIM" name="escolha" value="SIM" checked></input>
+        <label for="SIM">SIM</label><br>
+        <input type="radio" id="NÃO" name="escolha" value="NÃO"></input>
+        <label for="NÃO">Não</label><br>
+        </div>
+    </p>
+     <p>
+        <strong> serviços e adiionar opicionais</strong>
+        <div>
+        <input type="checkbox" id="caixa" name="adicionais" value="caixa" checked></input>
+        <label for="caixa">Entregue com caixa</label><br>
+        <input type="checkbox" id="bolha" name="adicionais" value="bolha"></input>
+        <label for="bolha">plastico bola</label><br>
+        <input type="checkbox" id="embaixadinha" name="adicionais" value="embaixadinha"></input>
+        <label for="embaixadinha">Ser entregue na embaixadinha</label><br>  
+        </div>
+    </p>
+    </fieldset>
+         <fieldset>
+        <legend><strong>Finalizações</strong></legend>
+    <p>
+        <label for="entrega"><strong>Endereço</strong></label><br>
+        <textarea id="entrega" name="entrega" rows="1" cols="10" placeholder="Digite seu endereço"></textarea>
+    </p>
+    <p>
+         <label for="foto_referencia">Foto de sua residência para que possamos assa...entregar</label><br>
+         <input type="file" id="foto_referencia" name="foto_referencia" accept="image/*">
+    </p>
+    <p>
+    <a href="index.html">
+        <button type="button"><h3 style="color: rgb(0, 0, 0)">PAGAR</h3></button>
+    </a>
+
+    </p>
+    </fieldset>
+    <br>
+        <br>
+    <br>
+
+    
+
+
+</body>
+</html>
